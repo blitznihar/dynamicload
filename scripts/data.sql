@@ -44,8 +44,8 @@ CREATE TABLE interface (
 
 
 INSERT INTO interface (InterfaceID, Source, SourceType, SourcePath, SourceDelimiter, Destination, DestinationType, DestinationPath, Program, MappingID, InterfaceDescription) VALUES
-('LAWSON-0005', 'FILE', 'FIXED',   'SourceFileFixedWidth.dat', NULL, 'Database',  NULL,             NULL, 'FileToTable', 'MAPPING-0001', 'Fixed Width File Testing Concept'),
-('LAWSON-0006', 'FILE', 'DELIMITED', NULL,  ',', 'Database', NULL, NULL, 'FileToTable', 'MAPPING-0002', 'CSV File- Comma DELIMITED Testing Concept'),
-('LAWSON-0007', 'FILE', 'DELIMITED', NULL, '|','Database', NULL, NULL, 'FileToTable', 'MAPPING-0003', 'CSV File- | DELIMITED Testing Concept');
+('LAWSON-0005', 'FILE', 'FIXED',   'SourceFileFixedWidth.dat', NULL, 'Database',  'AccountDestinationTableA',             NULL, 'FileToTable', 'MAPPING-0001', 'Fixed Width File Testing Concept'),
+('LAWSON-0006', 'FILE', 'DELIMITED', NULL,  ',', 'Database', 'AccountDestinationTableB', NULL, 'FileToTable', 'MAPPING-0002', 'CSV File- Comma DELIMITED Testing Concept'),
+('LAWSON-0007', 'FILE', 'DELIMITED', NULL, '|','Database', 'AccountDestinationTableC', NULL, 'FileToTable', 'MAPPING-0003', 'CSV File- | DELIMITED Testing Concept');
 
 
