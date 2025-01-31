@@ -45,3 +45,21 @@ INSERT INTO interface (interface_id, source_system, source_type, source_path, so
 ('LAWSON-0005', 'FILE', 'FIXED',   'SourceFileFixedWidth.dat', NULL, 'Database',  'AccountDestinationTableA',             NULL, 'FileToTable', 'MAPPING-0001', 'Fixed Width File Testing Concept'),
 ('LAWSON-0006', 'FILE', 'DELIMITED', NULL,  ',', 'Database', 'AccountDestinationTableB', NULL, 'FileToTable', 'MAPPING-0002', 'CSV File- Comma DELIMITED Testing Concept'),
 ('LAWSON-0007', 'FILE', 'DELIMITED', NULL, '|','Database', 'AccountDestinationTableC', NULL, 'FileToTable', 'MAPPING-0003', 'CSV File- | DELIMITED Testing Concept');
+
+
+DROP TABLE IF EXISTS Scheduler;
+CREATE TABLE Scheduler (
+    interface_id VARCHAR(20) NOT NULL PRIMARY KEY,
+    source_folder_location VARCHAR(255) NOT NULL,
+    destination_folder_location VARCHAR(255) NOT NULL, 
+    archive_location VARCHAR(255),
+    CreatedDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    ModifiedDate DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
+INSERT INTO Scheduler (interface_id, source_folder_location, destination_folder_location, archive_location)
+VALUES
+('LAWSON-0005', '\\\\Prod\\Interface005\\', '\\\\Prod\\AzureFilesDestination\\Interface005\\', '\\\\Prod\\AzureFilesArchive\\Interface005\\'),
+('LAWSON-0006', '\\\\Prod\\Interface006\\', '\\\\Prod\\AzureFilesDestination\\Interface006\\', '\\\\Prod\\AzureFilesArchive\\Interface006\\'),
+('LAWSON-0007', '\\\\Prod\\Interface007\\', '\\\\Prod\\AzureFilesDestination\\Interface007\\', '\\\\Prod\\AzureFilesArchive\\Interface007\\')
